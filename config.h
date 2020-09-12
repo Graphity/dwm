@@ -117,7 +117,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("pamixer --allow-boost -d 25; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,                       XK_equal,  spawn,          SHCMD("pamixer --allow-boost -i 25; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("pamixer --allow-boost --set-volume 150; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("pamixer --allow-boost --set-volume 100; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot '%H%M%S_scrot.png' -e 'mv $f ~/pics/screens/'") },
 	TAGKEYS(                        XK_z,                      0)
 	TAGKEYS(                        XK_x,                      1)
