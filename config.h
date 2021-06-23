@@ -36,6 +36,7 @@ static const Rule rules[] = {
 	{ "discord",   NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
 	{ "Spotify",   NULL,     NULL,           1 << 4,    0,          0,          -1,        -1 },
 	{ "St",        NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "kitty",     NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,        NULL,     "Event Tester", 0,         1,          0,           1,        -1 },
 };
 
@@ -79,7 +80,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium",  "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_teald, "-sb", col_black, "-sf", col_green, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -118,7 +119,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_equal,  spawn,          SHCMD("pamixer --allow-boost -i 25; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("pamixer --allow-boost --set-volume 100; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot '%H%M%S_scrot.png' -e 'mv $f ~/pics/screens/'") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot -s '%H%M%S_scrot.png' -e 'mv $f ~/pics/screens/'") },
 	TAGKEYS(                        XK_z,                      0)
 	TAGKEYS(                        XK_x,                      1)
 	TAGKEYS(                        XK_c,                      2)
