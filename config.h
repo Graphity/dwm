@@ -131,6 +131,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_r,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("pwr") },
+	{ ControlMask,                  XK_space,  spawn,          SHCMD("dunstctl close") },
+	{ ControlMask|ShiftMask,        XK_space,  spawn,          SHCMD("dunstctl close-all") },
+	{ ControlMask,                  XK_grave,  spawn,          SHCMD("dunstctl history-pop") }
 };
 
 /* button definitions */
