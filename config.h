@@ -14,7 +14,7 @@ static const char *fonts[]          = { "hack:bold:size=9:antialias=true", "font
 static const char dmenufont[]       = "hack:bold:size=9:antialias=true";
 static const char col_blue[]        = "#2193ca";
 static const char col_gray[]        = "#222222";
-static const char col_white[]       = "#e4f0fb";
+static const char col_white[]       = "#f1f2f6";
 static const char col_black[]       = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -30,8 +30,8 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-        /* class       instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-        { "Chromium",  NULL,     NULL,           1,         0,          0,          -1,        -1 },
+    /* class       instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+    { "Chromium",  NULL,     NULL,           1,         0,          0,          -1,        -1 },
 	{ "Emacs",     NULL,     NULL,           1 << 1,    0,          0,          -1,        -1 },
 	{ "discord",   NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
 	{ "Spotify",   NULL,     NULL,           1 << 4,    0,          0,          -1,        -1 },
