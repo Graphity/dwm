@@ -10,16 +10,16 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "hack:bold:size=9:antialias=true", "font awesome 5 free:style=solid:size=9" };
-static const char dmenufont[]       = "hack:bold:size=9:antialias=true";
-static const char col_blue[]        = "#2193ca";
+static const char *fonts[]          = { "Hack Nerd Font:bold:size=9:antialias=true" };
+static const char dmenufont[]       = "Hack Nerd Font:bold:size=9:antialias=true";
+static const char col_cyan[]        = "#2193ca";
 static const char col_gray[]        = "#222222";
 static const char col_white[]       = "#f1f2f6";
 static const char col_black[]       = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-    [SchemeNorm] = { col_blue,  col_black, col_black },
-	[SchemeSel]  = { col_black, col_blue,  col_gray  },
+    [SchemeNorm] = { col_cyan,  col_black, col_black },
+	[SchemeSel]  = { col_black, col_cyan,  col_gray  },
 };
 
 /* tagging */
@@ -79,7 +79,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium",  "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_blue, "-sb", col_black, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium",  "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_cyan, "-sb", col_black, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
