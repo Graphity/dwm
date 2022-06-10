@@ -12,8 +12,7 @@ static int swallowfloating         = 0;   /* 1 means swallow floating windows by
 static int showbar                 = 1;   /* 0 means no bar */
 static int topbar                  = 1;   /* 0 means bottom bar */
 static int focusonwheel            = 0;
-static char font[]                 = "Hack Nerd Font:bold:size=10";
-static char dmenufont[]            = "Hack Nerd Font:bold:size=10";
+static char font[128]              = "Hack Nerd Font:bold:size=10";
 static const char *fonts[]         = { font };
 static char normbgcolor[]          = "#000000";
 static char normbordercolor[]      = "#2193ca";
@@ -102,7 +101,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static char hpapps[256] = "google-chrome-stable,emacs,discord,spotify";
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-hp", hpapps, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /*
@@ -110,13 +110,13 @@ static const char *termcmd[]  = { "st", NULL };
  */
 ResourcePref resources[] = {
 		{ "font",                    STRING,  &font },
-		{ "dmenufont",               STRING,  &dmenufont },
 		{ "color0",                  STRING,  &normbordercolor },
 		{ "color6",                  STRING,  &selbordercolor },
 		{ "color0",                  STRING,  &normbgcolor },
 		{ "color6",                  STRING,  &normfgcolor },
 		{ "color0",                  STRING,  &selfgcolor },
 		{ "color6",                  STRING,  &selbgcolor },
+		{ "hpapps",                  STRING,  &hpapps },
 		{ "borderpx",          	     INTEGER, &borderpx },
 		{ "snap",          		     INTEGER, &snap },
 		{ "showbar",          	     INTEGER, &showbar },
@@ -130,7 +130,7 @@ ResourcePref resources[] = {
 		{ "systrayspacing",          INTEGER, &systrayspacing },
 		{ "systraypinningfailfirst", INTEGER, &systraypinningfailfirst },
 		{ "showsystray",             INTEGER, &showsystray },
-		{ "swallowfloating",         INTEGER, &swallowfloating},
+		{ "swallowfloating",         INTEGER, &swallowfloating },
 };
 
 
