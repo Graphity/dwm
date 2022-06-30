@@ -176,6 +176,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("pamixer --set-volume 100; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("flameshot full") },
+	{ MODKEY,                       XK_semicolon,  spawn,      SHCMD("rofi -show calc -modi calc -no-show-match -no-sort") },
+	{ MODKEY|ShiftMask,             XK_semicolon,  spawn,      SHCMD("rofi -show emoji -modi emoji") },
 	TAGKEYS(                        XK_z,                      0)
 	TAGKEYS(                        XK_x,                      1)
 	TAGKEYS(                        XK_c,                      2)
