@@ -140,7 +140,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_1,      togglescratch,  {.ui = 1 } },
-	{ MODKEY,                       XK_semicolon, togglescratch,  {.ui = 2 } },
+	{ MODKEY,                       XK_slash,  togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
