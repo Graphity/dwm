@@ -91,10 +91,10 @@ static const Layout layouts[] = {
 	{ MOD, XK_n,     ACTION##stack, {.i = INC(+1) } }, \
 	{ MOD, XK_p,     ACTION##stack, {.i = INC(-1) } }, \
 	{ MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \
-	{ MOD, XK_a,     ACTION##stack, {.i = 0 } }, \
+	{ MOD, XK_Up,    ACTION##stack, {.i = 0 } }, \
 	{ MOD, XK_2,     ACTION##stack, {.i = 1 } }, \
 	{ MOD, XK_3,     ACTION##stack, {.i = 2 } }, \
-	{ MOD, XK_e,     ACTION##stack, {.i = -1 } },
+	{ MOD, XK_Down,  ACTION##stack, {.i = -1 } },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -167,6 +167,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Right,  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Left,   tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Right,  tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("emacsclient -c") },
 	{ MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("playerctl -p spotify previous") },
 	{ MODKEY|ShiftMask,             XK_period, spawn,          SHCMD("playerctl -p spotify next") },
 	{ MODKEY,                       XK_period, spawn,          SHCMD("playerctl -p spotify play-pause") },
