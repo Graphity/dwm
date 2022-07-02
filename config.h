@@ -168,6 +168,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Left,   tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Right,  tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("emacsclient -c") },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("sxiv -t $WALLS") },
 	{ MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("playerctl -p spotify previous") },
 	{ MODKEY|ShiftMask,             XK_period, spawn,          SHCMD("playerctl -p spotify next") },
 	{ MODKEY,                       XK_period, spawn,          SHCMD("playerctl -p spotify play-pause") },
