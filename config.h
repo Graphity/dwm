@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	{ "Spotify",        NULL,      NULL,           1 << 4,    0,          0,          -1,        -1 },
 	{ "st",             NULL,      NULL,           0,         0,          1,           0,        -1 },
 	{ "Alacritty",      NULL,      NULL,           0,         0,          1,           0,        -1 },
-    { NULL,             "spterm",  NULL,           SPTAG(0),  1,          1,           0,        -1 },
+	{ NULL,             "spterm",  NULL,           SPTAG(0),  1,          1,           0,        -1 },
 	{ NULL,             "spgotop", NULL,           SPTAG(1),  1,          1,           0,        -1 },
 	{ NULL,             "splf",    NULL,           SPTAG(2),  1,          1,           0,        -1 },
 	{ NULL,             NULL,      "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
@@ -135,65 +135,65 @@ ResourcePref resources[] = {
 
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.ui = 0 } },
-	{ MODKEY,                       XK_1,      togglescratch,  {.ui = 1 } },
-	{ MODKEY,                       XK_slash,  togglescratch,  {.ui = 2 } },
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
-	STACKKEYS(MODKEY,                          focus)
-	STACKKEYS(MODKEY|ShiftMask,                push)
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_b,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_f,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY|ShiftMask,             XK_y,      setlayout,      {.v = &layouts[6]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[7]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_Left,   focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_Right,  focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_Left,   tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_Right,  tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("emacsclient -c") },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("sxiv -t $WALLS") },
-	{ MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("playerctl -p spotify previous") },
-	{ MODKEY|ShiftMask,             XK_period, spawn,          SHCMD("playerctl -p spotify next") },
-	{ MODKEY,                       XK_period, spawn,          SHCMD("playerctl -p spotify play-pause") },
-	{ MODKEY,                       XK_minus,  spawn,          SHCMD("pamixer --allow-boost -d 25; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,                       XK_equal,  spawn,          SHCMD("pamixer --allow-boost -i 25; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("pamixer --set-volume 100; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui") },
-	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("flameshot full") },
-	{ MODKEY,                       XK_semicolon,  spawn,      SHCMD("rofi -show calc -modi calc -no-show-match -no-sort") },
-	{ MODKEY|ShiftMask,             XK_semicolon,  spawn,      SHCMD("rofi -show emoji -modi emoji") },
-	TAGKEYS(                        XK_z,                      0)
-	TAGKEYS(                        XK_x,                      1)
-	TAGKEYS(                        XK_c,                      2)
-	TAGKEYS(                        XK_v,                      3)
-	TAGKEYS(                        XK_j,                      4)
-	TAGKEYS(                        XK_k,                      5)
-	TAGKEYS(                        XK_l,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("pwr") },
-	{ ControlMask,                  XK_space,  spawn,          SHCMD("dunstctl close") },
-	{ ControlMask|ShiftMask,        XK_space,  spawn,          SHCMD("dunstctl close-all") },
-	{ ControlMask,                  XK_grave,  spawn,          SHCMD("dunstctl history-pop") }
+	/* modifier                     key           function        argument */
+	{ MODKEY,                       XK_d,         spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_Return,    spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return,    togglescratch,  {.ui = 0 } },
+	{ MODKEY,                       XK_1,         togglescratch,  {.ui = 1 } },
+	{ MODKEY,                       XK_slash,     togglescratch,  {.ui = 2 } },
+	{ MODKEY|ShiftMask,             XK_b,         togglebar,      {0} },
+	STACKKEYS(MODKEY,                             focus)
+	STACKKEYS(MODKEY|ShiftMask,                   push)
+	{ MODKEY,                       XK_i,         incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_o,         incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_b,         setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_f,         setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_Return,    zoom,           {0} },
+	{ MODKEY,                       XK_Tab,       view,           {0} },
+	{ MODKEY,                       XK_q,         killclient,     {0} },
+	{ MODKEY,                       XK_t,         setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_f,         setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,         setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_u,         setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_u,         setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_y,         setlayout,      {.v = &layouts[5]} },
+	{ MODKEY|ShiftMask,             XK_y,         setlayout,      {.v = &layouts[6]} },
+	{ MODKEY,                       XK_g,         setlayout,      {.v = &layouts[7]} },
+	{ MODKEY,                       XK_space,     setlayout,      {0} },
+	{ MODKEY|ShiftMask,             XK_space,     togglefloating, {0} },
+	{ MODKEY,                       XK_0,         view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,         tag,            {.ui = ~0 } },
+	{ MODKEY,                       XK_Left,      focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_Right,     focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Left,      tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Right,     tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_e,         spawn,          SHCMD("emacsclient -c") },
+	{ MODKEY|ShiftMask,             XK_w,         spawn,          SHCMD("sxiv -t $WALLS") },
+	{ MODKEY|ShiftMask,             XK_comma,     spawn,          SHCMD("playerctl -p spotify previous") },
+	{ MODKEY|ShiftMask,             XK_period,    spawn,          SHCMD("playerctl -p spotify next") },
+	{ MODKEY,                       XK_period,    spawn,          SHCMD("playerctl -p spotify play-pause") },
+	{ MODKEY,                       XK_minus,     spawn,          SHCMD("pamixer --allow-boost -d 25; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,                       XK_equal,     spawn,          SHCMD("pamixer --allow-boost -i 25; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_minus,     spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_equal,     spawn,          SHCMD("pamixer --set-volume 100; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_s,         spawn,          SHCMD("flameshot gui") },
+	{ MODKEY|ControlMask,           XK_s,         spawn,          SHCMD("flameshot full") },
+	{ MODKEY,                       XK_semicolon, spawn,          SHCMD("rofi -show calc -modi calc -no-show-match -no-sort") },
+	{ MODKEY|ShiftMask,             XK_semicolon, spawn,          SHCMD("rofi -show emoji -modi emoji") },
+	TAGKEYS(                        XK_z,                         0)
+	TAGKEYS(                        XK_x,                         1)
+	TAGKEYS(                        XK_c,                         2)
+	TAGKEYS(                        XK_v,                         3)
+	TAGKEYS(                        XK_j,                         4)
+	TAGKEYS(                        XK_k,                         5)
+	TAGKEYS(                        XK_l,                         6)
+	TAGKEYS(                        XK_8,                         7)
+	TAGKEYS(                        XK_9,                         8)
+	{ MODKEY|ShiftMask,             XK_r,         quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,         spawn,          SHCMD("pwr") },
+	{ ControlMask,                  XK_space,     spawn,          SHCMD("dunstctl close") },
+	{ ControlMask|ShiftMask,        XK_space,     spawn,          SHCMD("dunstctl close-all") },
+	{ ControlMask,                  XK_grave,     spawn,          SHCMD("dunstctl history-pop") }
 };
 
 /* button definitions */
